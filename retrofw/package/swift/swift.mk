@@ -10,7 +10,7 @@ SWIFT_INSTALL_TARGET = YES
 SWIFT_SUPPORTS_IN_SOURCE_BUILD = NO
 SWIFT_DEPENDENCIES = icu libbsd libdispatch # Dispatch only needed for sources
 SWIFT_PATCH =  https://gist.github.com/colemancda/e2f00ab2e4226b0543fb2f332c47422e/raw/ac50196a84c1af9be969b8130ce74ec6e7de630d/RefCount.h.diff \
-	https://gist.github.com/colemancda/ded1de5b1b84a5b84a13c2433b9001a7/raw/7b24f72ca78547b82b3d2a43a57af1a88a5f2aff/swift-5.5.3-armv5.patch \
+	https://gist.github.com/colemancda/265b27abe31725d5e40f3fdcddbe1918/raw/6d245e0db2b541ae4abe8329fdac74b30600c0fb/swift-5.6-mips.patch \
 
 ifeq ($(BR2_TOOLCHAIN_HAS_LIBATOMIC),y)
 SWIFT_CONF_ENV += LIBS="-latomic"
@@ -32,10 +32,6 @@ endif
 
 ifeq ($(SWIFT_TARGET_ARCH),riscv64)
 SWIFT_EXTRA_FLAGS		= -mno-relax
-else ifeq ($(SWIFT_TARGET_ARCH),mipsel)
-SWIFT_EXTRA_FLAGS		= -msoft-float
-else ifeq ($(SWIFT_TARGET_ARCH),mips64el)
-SWIFT_EXTRA_FLAGS		= -msoft-float
 else
 SWIFT_EXTRA_FLAGS		= 
 endif
