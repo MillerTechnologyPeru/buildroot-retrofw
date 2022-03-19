@@ -4,3 +4,9 @@ menu "RetroFW packages"
 	source "$BR2_EXTERNAL_RETROFW_PATH/package/libmikmod/Config.in"
 	source "$BR2_EXTERNAL_RETROFW_PATH/package/timidity/Config.in"
 endmenu
+menu "Swift"
+	source "$BR2_EXTERNAL_RETROFW_PATH/package/libdispatch/Config.in"
+	source "$BR2_EXTERNAL_RETROFW_PATH/package/swift/Config.in"
+	source "$BR2_EXTERNAL_RETROFW_PATH/package/libswiftdispatch/Config.in"
+	source "$BR2_EXTERNAL_RETROFW_PATH/package/foundation/Config.in"
+endmenu
